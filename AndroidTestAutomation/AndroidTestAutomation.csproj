@@ -16,4 +16,12 @@
     <PackageReference Include="coverlet.collector" Version="3.1.2" />
   </ItemGroup>
 
+  <!--<ItemGroup>
+    <Folder Include="assets\" />
+  </ItemGroup> -->
+
+	<ItemGroup>
+		<Content Include="assets/*.*" CopyToOutputDirectory="PreserveNewest" />
+	</ItemGroup>
+
 </Project>
