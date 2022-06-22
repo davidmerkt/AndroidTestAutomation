@@ -41,18 +41,16 @@ namespace AndroidTestAutomation
             Console.WriteLine("Start test");
 
             // Open the App/Alert Dialogs page
-            driver.StartActivity("io.appium.android.apis", ".app.AlertDialogSamples");
+            var AppAlertDialogs = new AppAlertDialogs(driver);
+            AppAlertDialogs.Goto();
 
             // Cause a dialog to be opened, and assert that the text in the dialog is correct
-            AndroidElement openDialogButton = driver.FindElementById("io.appium.android.apis:id/two_buttons");
-            openDialogButton.Click();
 
-            AndroidElement alertElement = driver.FindElementById("android:id/alertTitle");
-            String alertText = alertElement.Text;
-            Assert.AreEqual("Lorem ipsum dolor sit aie consectetur adipiscing\r\nPlloaso mako nuto siwuf cakso dodtos anr koop.", alertText);
+            AppAlertDialogs.Tap_OkCancelDialogWithAMessage_Button();
+            Assert.AreEqual("Lorem ipsum dolor sit aie consectetur adipiscing\r\nPlloaso mako nuto siwuf cakso dodtos anr koop.", AppAlertDialogs.AlertText());
 
             // Close the dialog
-            driver.FindElementById("android:id/button1").Click();
+            AppAlertDialogs.Click_Button1();
         }
     }
 }
