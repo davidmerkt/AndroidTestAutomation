@@ -21,6 +21,7 @@ namespace AndroidTestAutomation
 
             // Create DriverOptions object, which will contain information on the APK to load for testing
             DriverOptions capabilities = new AppiumOptions();
+            capabilities.AddAdditionalCapability(MobileCapabilityType.AutomationName, "UiAutomator2");
             capabilities.AddAdditionalCapability(MobileCapabilityType.App, $"{System.AppDomain.CurrentDomain.BaseDirectory.ToString()}/assets/ApiDemos-debug.apk"); 
 
             // Create new driver object. It will use the Appium Desktop server that we're currently running.
