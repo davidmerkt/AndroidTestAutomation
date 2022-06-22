@@ -50,7 +50,7 @@ namespace AndroidTestAutomation
             Assert.AreEqual("Lorem ipsum dolor sit aie consectetur adipiscing\r\nPlloaso mako nuto siwuf cakso dodtos anr koop.", AppAlertDialogs.AlertText());
 
             // Close the dialog
-            AppAlertDialogs.Click_Button1();
+            AppAlertDialogs.Click_Ok_Button();
         }
     }
 }

@@ -18,8 +18,9 @@ namespace AndroidTestAutomation
 
         private AndroidElement openDialogButton => _driver.FindElementById("io.appium.android.apis:id/two_buttons");
         private AndroidElement alertElement => _driver.FindElementById("android:id/alertTitle");
-        private AndroidElement button1 => _driver.FindElementById("android:id/button1");
-        private AndroidElement button2 => _driver.FindElementById("android:id/button2");
+        private AndroidElement OkButton => _driver.FindElementById("android:id/button1");
+        private AndroidElement CancelButton => _driver.FindElementById("android:id/button2");
+        private AndroidElement SomethingButton => _driver.FindElementById("android:id/button3");
 
         public void Goto()
         {
@@ -36,14 +37,14 @@ namespace AndroidTestAutomation
             return alertElement?.Text;
         }
 
-        public void Click_Button1()
+        public void Click_Ok_Button()
         {
-            button1?.Click();
+            OkButton?.Click();
         }
 
-        public void Click_Button2()
+        public void Click_Cancel_Button()
         {
-            button2?.Click();
+            CancelButton?.Click();
         }
     }
 }
