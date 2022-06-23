@@ -70,5 +70,16 @@ namespace AndroidTestAutomation
             Assert.AreEqual(Row2Text, 
                 ViewsTextFields.GetRow2LabelText());
         }
+
+        [TestMethod]
+        public void Buttons_ClickToggleButton_Toggles()
+        {
+            var ViewsButtons = new ViewsButtons(driver);
+            ViewsButtons.Goto();
+
+            Assert.AreEqual("OFF", ViewsButtons.GetToggleButtonText());
+            ViewsButtons.ClickToggleButton();
+            Assert.AreEqual("ON", ViewsButtons.GetToggleButtonText());
+        }
     }
 }
