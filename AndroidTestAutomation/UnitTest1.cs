@@ -48,10 +48,27 @@ namespace AndroidTestAutomation
             // Cause a dialog to be opened, and assert that the text in the dialog is correct
 
             AppAlertDialogs.Tap_OkCancelDialogWithAMessage_Button();
-            Assert.AreEqual("Lorem ipsum dolor sit aie consectetur adipiscing\r\nPlloaso mako nuto siwuf cakso dodtos anr koop.", AppAlertDialogs.AlertText());
+            Assert.AreEqual("Lorem ipsum dolor sit aie consectetur adipiscing\r\nPlloaso mako nuto siwuf cakso dodtos anr koop.", 
+                AppAlertDialogs.AlertText());
 
             // Close the dialog
             AppAlertDialogs.Click_Ok_Button();
+        }
+
+        [TestMethod]
+        public void TextCanBeAdded()
+        {
+            string Row2Text = "ThisIsATest";
+            Console.WriteLine("Start test");
+
+            // Open the Views/TextFields page
+            var ViewsTextFields = new ViewsTextFields(driver);
+            ViewsTextFields.Goto();
+
+            // Enter text into the 'Password' field (row 2) and verify label is updated
+            ViewsTextFields.FillTextRow2(Row2Text);
+            Assert.AreEqual(Row2Text, 
+                ViewsTextFields.GetRow2LabelText());
         }
     }
 }
