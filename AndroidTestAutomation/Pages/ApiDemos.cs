@@ -16,6 +16,11 @@ namespace AndroidTestAutomation
             _driver = driver;
         }
 
+        public void Goto()
+        {
+            _driver.StartActivity("io.appium.android.apis", "ApiDemos");
+        }
+
         private AndroidElement Access_ibilityButton => _driver.FindElementByAccessibilityId("Access'ibility");
         private AndroidElement AccessibilityButton => _driver.FindElementByAccessibilityId("Accessibility");
         private AndroidElement AnimationButton => _driver.FindElementByAccessibilityId("Animation");
@@ -36,9 +41,10 @@ namespace AndroidTestAutomation
             AnimationButton.Click();
         }
 
-        public void ClickAppButton()
+        public App ClickAppButton()
         {
             AppButton.Click();
+            return new App(_driver);
         }
 
         public void ClickButtonByAccessibilityId(string accessibilityId) => 
