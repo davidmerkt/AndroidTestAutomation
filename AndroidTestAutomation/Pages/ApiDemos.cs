@@ -21,6 +21,26 @@ namespace AndroidTestAutomation
         private AndroidElement AnimationButton => _driver.FindElementByAccessibilityId("Animation");
         private AndroidElement AppButton => _driver.FindElementByAccessibilityId("App");
 
+        public void ClickAccess_ibilityButton()
+        {
+            Access_ibilityButton.Click();
+        }
+
+        public void ClickAccessibilityButton()
+        {
+            AccessibilityButton.Click();
+        }
+
+        public void ClickAnimationButton()
+        {
+            AnimationButton.Click();
+        }
+
+        public void ClickAppButton()
+        {
+            AppButton.Click();
+        }
+
         public void ClickButtonByAccessibilityId(string accessibilityId) => 
             _driver.FindElementByAccessibilityId(accessibilityId).Click();
     }
